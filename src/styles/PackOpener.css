@@ -1,0 +1,49 @@
+.pack-opener-content {
+    padding-bottom: 10vh;
+}
+
+.pack-opener-content > h1 {
+    text-decoration: underline;
+}
+
+h1 {
+    padding-left: 0.7vw;
+}
+
+.cards {
+    color: white;
+    font-size: large;
+}
+
+b {
+    -webkit-text-stroke: 0.7px black;
+}
+
+.premium-card {
+    color: rgb(179, 153, 11);
+}
+
+.peeler {
+    height: 63px;
+    line-height: 63px;
+    text-align: center;
+}
+
+.peeler > div {
+    width: 330px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+}
+
+.peeler-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2vw;
+    overflow: hidden;
+}
+
+.files {
+    margin-top: 48vh;
+    position: fixed;
+}
