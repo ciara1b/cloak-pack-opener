@@ -23,12 +23,12 @@ const PackOpener = () => {
         fetch(raw_normals)
         .then(r => r.text())
         .then(text => {
-            setNormals(text.split("\r\n"))
+            setNormals(text.split("\n"))
         });
         fetch(raw_premiums)
         .then(r => r.text())
         .then(text => {
-            setPremiums(text.split("\r\n"))
+            setPremiums(text.split("\n"))
         });
     }
 
