@@ -1,7 +1,7 @@
 import '../styles/PackOpener.css'
 import raw_normals from '../assets/normal.txt'
 import raw_premiums from '../assets/premium.txt'
-import { Container, Row, Col, Accordion, Button } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useEffect, useState } from "react";
 import ListPacksComponent from '../components/ListPacksComponent';
 
