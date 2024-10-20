@@ -1,0 +1,135 @@
+Yellow Chocobo
+Red Chocobo
+Blue Chocobo
+Grey Chocobo
+Revolter
+Cactuar
+Jumbo Cactuar
+Bomb
+Grenade
+Ahriman
+Malboro
+Coeurl
+Sandworm
+Adamantoise
+Tonberry
+Goblin
+Goblin Guard
+Goblin Prince
+Iron Giant
+Antlion
+Cockatrice
+Yellow Jelly
+Red Mousse
+Blue Flan
+Green Slime
+Mu
+Mugbear
+Sahagin
+Sahagin Prince
+Ankheg
+Manticore
+Basilisk
+Imp
+Gigantoad
+Hornet
+Killer Bee
+Mimic
+Coeurl Cat
+Queen Coeurl
+Bandercoeurl
+Bandersnatch
+Abyss Worm
+Ironback
+GP Snapper
+Ogre
+Ogre Chief
+Naga
+Bone Naga
+Element (Wind)
+Element (Fire)
+Element (Earth)
+Element (Water)
+White Mage
+Black Mage
+Machinist
+Dark Knight
+Berserker
+Thief
+Paladin
+Red Mage
+Archer
+Blue Mage
+Warrior
+Monk
+Scholar
+Bard
+Evoker
+The Triton
+The Duergar
+Imperial Soldier (Orc)
+Imperial Soldier (Half-Orc)
+Imperial Soldier (Chocobo Rider)
+Atlana Charger (Defender)
+Sapphirella Sparrow (Defender)
+Silver Soldier (Defender)
+Golden Dodger (Defender)
+Mysidia Bruiser (Defender)
+Atlana Charger (Goalkeeper)
+Sapphirella Sparrow (Goalkeeper)
+Silver Soldier (Goalkeeper)
+Golden Dodger (Goalkeeper)
+Mysidia Bruiser (Goalkeeper)
+Atlana Charger (Forward)
+Sapphirella Sparrow (Forward)
+Silver Soldier (Forward)
+Golden Dodger (Forward)
+Mysidia Bruiser (Forward)
+Atlana Charger (Midfielder)
+Sapphirella Sparrow (Midfielder)
+Silver Soldier (Midfielder)
+Golden Dodger (Midfielder)
+Mysidia Bruiser (Midfielder)
+Snaketail Messengers
+Tabaxi
+Goliath & Firbolg
+Elf
+Halfling
+Gnome
+Tiefling (Red)
+Tiefling (Blue)
+Tiefling (Yellow)
+Tiefling (Pink)
+Tiefling (Purple)
+Tiefling (Silver)
+Tiefling (White)
+Roaring Skies
+House of Leo (Crest)
+House of Leo
+House of Onion (Crest)
+House of Onion
+House of Pulse (Crest)
+House of Pulse
+House of Maduin (Crest)
+House of Maduin
+House of Rose (Crest)
+House of Rose
+Chocobo Racer
+Chocobo Breeder
+Armoured Chocobo
+Chicobo
+Simon and Carbuncle (Musicians)
+Forest Owls (Musicians)
+Red Wings (Musicians)
+The Returners (Musicians)
+Yevonites (Musicians)
+Tyr-Besal General
+Tyr-Besal Soldier
+Saumur Guard
+Saumur Guard Captain
+Forgotten (Skydancer)
+Forgotten (Casualty)
+Forgotten (Anomaly)
+Mutagen Creatures
+Travelling Trader
+Candle Farmer
