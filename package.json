@@ -1,7 +1,7 @@
 {
-  "homepage": "https://ciara1b.github.io/ciara1b.github.io",
   "name": "cloak-pack-opening-sim",
   "version": "0.1.0",
+  "homepage": "https://ciara1b.github.io/cloak-pack-opener",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
