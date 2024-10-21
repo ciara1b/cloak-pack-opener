@@ -1,7 +1,3 @@
-.pack-opener-content {
-    padding-bottom: 10vh;
-}
-
 .pack-opener-content > h2 {
     text-decoration: underline;
     text-align: center;
@@ -38,10 +34,4 @@ b {
     flex-wrap: wrap;
     gap: 2vw;
     overflow: hidden;
-}
-
-.files {
-    bottom: 0;
-    margin-bottom: 3vh;
-    position: fixed;
 }

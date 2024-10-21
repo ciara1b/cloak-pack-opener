@@ -1,13 +1,15 @@
 import { Button } from 'react-bootstrap';
+import { useRef, useState } from "react";
 
 const FileReaderComponent = (props) => {
+    const fileInputRef = useRef();
+    const fr = new FileReader();
 
     const exportToCsv = () => {
         var CsvString = "Name,Value,Total Owned,\r\n";
         Object.entries(props.savedCards).map(([key, value]) => {
             let pair = key.split(",");
-            CsvString += pair[0].split("\r") + "," + pair[1] + "," + value + "," + "\r\n";
-            console.log(CsvString);
+            CsvString += pair[0].split("\r")[0] + "," + pair[1] + "," + value + "," + "\r\n";
         });
         CsvString = "data:application/csv," + encodeURIComponent(CsvString);
         var x = document.createElement("A");
@@ -19,7 +21,7 @@ const FileReaderComponent = (props) => {
 
     const importFromCsv = (e) => {
         if (e.target.files[0]) {
-            props.fr.onload = function (event) {
+            fr.onload = function (event) {
                 const string = event.target.result;
                 const csvRows = string.slice(string.indexOf("\n") + 1).split(",\r\n");
             
@@ -30,14 +32,16 @@ const FileReaderComponent = (props) => {
             }
         }
 
-        props.fr.readAsText(e.target.files[0]);
+        fr.readAsText(e.target.files[0]);
     }
 
     return (
         <div className="files">
-            <input type={"file"} accept={".csv"} onChange={importFromCsv} />
             <br />
-            <Button variant="warning" onClick={exportToCsv}>Export Saved</Button>{' '}
+            <Button variant="warning" onClick={()=>fileInputRef.current.click()}>Import Cards</Button>{' '}
+            <input onChange={importFromCsv} multiple={false} ref={fileInputRef} type='file'hidden/>
+            <br />
+            <Button variant="warning" onClick={exportToCsv}>Export Cards</Button>{' '}
         </div>
     );
   }

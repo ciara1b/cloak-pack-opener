@@ -15,8 +15,6 @@ const PackOpener = () => {
     const [num, setNum] = useState();
     const [saved, setSaved] = useState({});
 
-    const fr = new FileReader();
-
     const randomNumberInRange = (min, max) => {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     };
@@ -102,7 +100,7 @@ const PackOpener = () => {
                         <br />
                         <Button variant="primary" onClick={handleClick}>Open Packs</Button>{' '}
                         <Button variant="success" onClick={handleSave}>Save Cards</Button>{' '}
-                        <FileReaderComponent savedCards={saved} fileReader={fr} cn={charName} />
+                        <FileReaderComponent savedCards={saved} cn={charName} />
                     </Col>
                     <Col xs={9}>
                         <ListPacksComponent openedPacks={packs} normArr={normals} premArr={premiums} />
