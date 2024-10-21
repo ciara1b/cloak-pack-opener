@@ -90,10 +90,10 @@ const PackOpener = () => {
 
     return (
         <div className='pack-opener-content'>
-            <h1>Pack Opener</h1>
+            <h2>Pack Opener</h2>
             <Container fluid>
                 <Row>
-                    <Col className='options-content'>
+                    <Col xs={2} className='text-center'>
                         <form>
                             <input type="number" value={num} onChange={(e) => setNum(e.target.value)} placeholder="Number of packs..." />
                             <input type="number" value={totalSP} onChange={(e) => setTotalSP(e.target.value)} placeholder="Total sp..." />
