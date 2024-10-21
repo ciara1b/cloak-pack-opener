@@ -2,6 +2,8 @@ import { Button } from 'react-bootstrap';
 import { useRef, useState } from "react";
 
 const FileReaderComponent = (props) => {
+    const [importMsg, setImportMsg] = useState("");
+
     const fileInputRef = useRef();
     const fr = new FileReader();
 
@@ -30,6 +32,7 @@ const FileReaderComponent = (props) => {
                     props.savedCards[[values[0], values[1]]] = parseInt(values[2]);
                 }
             }
+            setImportMsg("File imported!");
         }
 
         fr.readAsText(e.target.files[0]);
@@ -37,6 +40,8 @@ const FileReaderComponent = (props) => {
 
     return (
         <div className="files">
+            <br />
+            {importMsg}
             <br />
             <Button variant="warning" onClick={()=>fileInputRef.current.click()}>Import Cards</Button>{' '}
             <input onChange={importFromCsv} multiple={false} ref={fileInputRef} type='file'hidden/>
