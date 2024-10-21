@@ -4,32 +4,35 @@ import raw_premiums from '../assets/premium.txt'
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useEffect, useState } from "react";
 import ListPacksComponent from '../components/ListPacksComponent';
+import FileReaderComponent from '../components/FileReaderComponent';
 
 const PackOpener = () => {
     const [normals, setNormals] = useState([]);
     const [premiums, setPremiums] = useState([]);
     const [packs, setPacks] = useState([]);
     const [totalSP, setTotalSP] = useState();
+    const [charName, setCharName] = useState("");
     const [num, setNum] = useState();
-    const [saved, setSaved] = useState({});
+    const saved = {};
 
-    const fileReader = new FileReader();
+    const fr = new FileReader();
 
     const randomNumberInRange = (min, max) => {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     };
 
     const loadData = () => {
-        fetch(raw_normals)
-        .then(r => r.text())
-        .then(text => {
-            setNormals(text.split("\n"))
-        });
-        fetch(raw_premiums)
-        .then(r => r.text())
-        .then(text => {
-            setPremiums(text.split("\n"))
-        });
+        [raw_normals, raw_premiums].forEach(data =>
+            fetch(data)
+            .then(r => r.text())
+            .then(text => {
+                if (data === raw_normals) {
+                    setNormals(text.split("\n"))
+                } else {
+                    setPremiums(text.split("\n"))
+                }
+            })
+        );
     }
 
     const handleSave = () => {
@@ -42,42 +45,9 @@ const PackOpener = () => {
                 }
             }
         }
-        console.log("Current Stock:");
-        console.log(saved);
-        console.log("Packs Contents:");
-        console.log(packs);
-
+        console.log("Current Stock:\n" + saved);
+        console.log("Packs Contents:\n" + packs);
         setPacks([]);
-    }
-
-    const exportToCsv = () => {
-        var CsvString = "Name,Value,Total Owned,\r\n";
-        Object.entries(saved).map(([key, value]) => {
-            let pair = key.split(",");
-            CsvString += pair[0] + "," + pair[1] + "," + value + "," + "\r\n";
-        });
-        CsvString = "data:application/csv," + encodeURIComponent(CsvString);
-        var x = document.createElement("A");
-        x.setAttribute("href", CsvString);
-        x.setAttribute("download", "somedata.csv");
-        document.body.appendChild(x);
-        x.click();
-    }
-
-    const importFromCsv = (e) => {
-        if (e.target.files[0]) {
-            fileReader.onload = function (event) {
-                const string = event.target.result;
-                const csvRows = string.slice(string.indexOf("\n") + 1).split(",\r\n");
-            
-                for (let i = 0; i < csvRows.length-1; i++) {
-                    let values = csvRows[i].split(",");
-                    saved[[values[0], values[1]]] = parseInt(values[2]);
-                }
-            }
-        }
-
-        fileReader.readAsText(e.target.files[0]);
     }
 
     const handleClick = () => {
@@ -124,19 +94,13 @@ const PackOpener = () => {
                     <Col className='options-content'>
                         <form>
                             <input type="number" value={num} onChange={(e) => setNum(e.target.value)} placeholder="Number of packs..." />
-                            <br />
                             <input type="number" value={totalSP} onChange={(e) => setTotalSP(e.target.value)} placeholder="Total sp..." />
+                            <input type="text" value={charName} onChange={(e) => setCharName(e.target.value)} placeholder="Character name..." />
                         </form>
+                        <br />
                         <Button variant="primary" onClick={handleClick}>Open Packs</Button>{' '}
-                        <br />
                         <Button variant="success" onClick={handleSave}>Save Cards</Button>{' '}
-                        <br />
-                        <br />
-                        <div className="files">
-                            <input type={"file"} accept={".csv"} onChange={importFromCsv} />
-                            <br />
-                            <Button variant="warning" onClick={exportToCsv}>Export Saved</Button>{' '}
-                        </div>
+                        <FileReaderComponent savedCards={saved} fileReader={fr} />
                     </Col>
                     <Col xs={9}>
                         <ListPacksComponent openedPacks={packs} normArr={normals} premArr={premiums} />
