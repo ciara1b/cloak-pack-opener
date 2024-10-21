@@ -13,7 +13,7 @@ const PackOpener = () => {
     const [totalSP, setTotalSP] = useState();
     const [charName, setCharName] = useState("");
     const [num, setNum] = useState();
-    const saved = {};
+    const [saved, setSaved] = useState({});
 
     const fr = new FileReader();
 
@@ -45,8 +45,10 @@ const PackOpener = () => {
                 }
             }
         }
-        console.log("Current Stock:\n" + saved);
-        console.log("Packs Contents:\n" + packs);
+        console.log("Current Stock:");
+        console.log(saved);
+        console.log("Packs Contents:");
+        console.log(packs);
         setPacks([]);
     }
 
@@ -100,7 +102,7 @@ const PackOpener = () => {
                         <br />
                         <Button variant="primary" onClick={handleClick}>Open Packs</Button>{' '}
                         <Button variant="success" onClick={handleSave}>Save Cards</Button>{' '}
-                        <FileReaderComponent savedCards={saved} fileReader={fr} />
+                        <FileReaderComponent savedCards={saved} fileReader={fr} cn={charName} />
                     </Col>
                     <Col xs={9}>
                         <ListPacksComponent openedPacks={packs} normArr={normals} premArr={premiums} />

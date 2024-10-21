@@ -12,7 +12,7 @@ const FileReaderComponent = (props) => {
         CsvString = "data:application/csv," + encodeURIComponent(CsvString);
         var x = document.createElement("A");
         x.setAttribute("href", CsvString);
-        x.setAttribute("download", "somedata.csv");
+        x.setAttribute("download", (props.cn + ".csv"));
         document.body.appendChild(x);
         x.click();
     }
