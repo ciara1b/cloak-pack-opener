@@ -4,6 +4,7 @@ import raw_premiums from '../assets/premium.txt'
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useEffect, useState } from "react";
 import ListPacksComponent from '../components/ListPacksComponent';
+import ListStockComponent from '../components/ListStockComponent';
 import FileReaderComponent from '../components/FileReaderComponent';
 
 const PackOpener = () => {
@@ -14,6 +15,7 @@ const PackOpener = () => {
     const [charName, setCharName] = useState("");
     const [num, setNum] = useState();
     const [saved, setSaved] = useState({});
+
 
     const randomNumberInRange = (min, max) => {
         return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -61,7 +63,7 @@ const PackOpener = () => {
                 break;
             }
         }
-        setTotalSP(totalSP - lessSP)
+        setTotalSP(totalSP - lessSP);
     }
 
     const openPacks = () => {
@@ -83,7 +85,7 @@ const PackOpener = () => {
     }
 
     useEffect(() => {
-        loadData()
+        loadData();
     }, [num]);
 
     return (
@@ -103,7 +105,11 @@ const PackOpener = () => {
                         <FileReaderComponent savedCards={saved} cn={charName} />
                     </Col>
                     <Col xs={9}>
-                        <ListPacksComponent openedPacks={packs} normArr={normals} premArr={premiums} />
+                    {packs.length > 0 ? (
+                        <ListPacksComponent openedPacks={packs} />
+                    ) : (
+                        <ListStockComponent cardsStock={saved} />
+                    )}
                     </Col>
                 </Row>
             </Container>

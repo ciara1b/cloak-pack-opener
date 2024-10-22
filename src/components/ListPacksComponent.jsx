@@ -5,7 +5,7 @@ import { PeelWrapper, PeelBack, PeelBottom, PeelTop } from 'react-peel';
 const ListPacksComponent = (props) => {
 
   return (
-    <div className="peeler-grid" >
+    <div className="peeler-grid">
       {props.openedPacks.map((pack, i) => (
         <PeelWrapper
           className="peel-wrapper"
