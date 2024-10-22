@@ -26,11 +26,13 @@ const FileReaderComponent = (props) => {
             fr.onload = function (event) {
                 const string = event.target.result;
                 const csvRows = string.slice(string.indexOf("\n") + 1).split(",\r\n");
+                const savedCards = {};
             
                 for (let i = 0; i < csvRows.length-1; i++) {
                     let values = csvRows[i].split(",");
-                    props.savedCards[[values[0], values[1]]] = parseInt(values[2]);
+                    savedCards[[values[0], values[1]]] = parseInt(values[2]);
                 }
+                props.setSaved(savedCards);
             }
             setImportMsg("File imported!");
         }

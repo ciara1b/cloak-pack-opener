@@ -86,7 +86,7 @@ const PackOpener = () => {
 
     useEffect(() => {
         loadData();
-    }, [num]);
+    }, [num, saved]);
 
     return (
         <div className='pack-opener-content'>
@@ -102,7 +102,7 @@ const PackOpener = () => {
                         <br />
                         <Button variant="primary" onClick={handleClick}>Open Packs</Button>{' '}
                         <Button variant="success" onClick={handleSave}>Save Cards</Button>{' '}
-                        <FileReaderComponent savedCards={saved} cn={charName} />
+                        <FileReaderComponent cn={charName} setSaved={setSaved} />
                     </Col>
                     <Col xs={9}>
                     {packs.length > 0 ? (
