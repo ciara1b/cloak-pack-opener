@@ -9,7 +9,7 @@ const ListStockComponent = (props) => {
           <th>Number Owned</th>
         </tr>
         {Object.entries(props.cardsStock).map(([card, numOwned], i) => (
-          <tr key={i} eventKey={i}>
+          <tr key={i}>
             <td>{card.split(",")[0]}</td>
             <td>{card.split(",")[1]}</td>
             <td>{numOwned}</td>

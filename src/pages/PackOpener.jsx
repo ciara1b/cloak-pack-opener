@@ -102,7 +102,7 @@ const PackOpener = () => {
                         <br />
                         <Button variant="primary" onClick={handleClick}>Open Packs</Button>{' '}
                         <Button variant="success" onClick={handleSave}>Save Cards</Button>{' '}
-                        <FileReaderComponent cn={charName} setSaved={setSaved} />
+                        <FileReaderComponent savedCards={saved} cn={charName} setSaved={setSaved} />
                     </Col>
                     <Col xs={9}>
                     {packs.length > 0 ? (

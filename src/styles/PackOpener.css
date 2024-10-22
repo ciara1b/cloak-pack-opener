@@ -15,7 +15,7 @@ tr, th, td {
 }
 
 th {
-    font-size: large;
+    font-size: larger;
     border: 3px solid;
 }
 
@@ -29,6 +29,14 @@ td:first-child {
 
 tr:last-child {
     border-bottom: 3px solid;
+}
+
+tr:hover {
+    background-color: rgb(172, 170, 170);
+}
+
+td:hover:not(:first-child) {
+    background-color: red;
 }
 
 .cards {

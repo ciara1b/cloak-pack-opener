@@ -11,7 +11,7 @@ const FileReaderComponent = (props) => {
         var CsvString = "Name,Value,Total Owned,\r\n";
         Object.entries(props.savedCards).map(([key, value]) => {
             let pair = key.split(",");
-            CsvString += pair[0].split("\r")[0] + "," + pair[1] + "," + value + "," + "\r\n";
+            CsvString += pair[0].split("\r")[0] + "," + pair[1] + "," + value + "\r\n";
         });
         CsvString = "data:application/csv," + encodeURIComponent(CsvString);
         var x = document.createElement("A");
@@ -25,7 +25,7 @@ const FileReaderComponent = (props) => {
         if (e.target.files[0]) {
             fr.onload = function (event) {
                 const string = event.target.result;
-                const csvRows = string.slice(string.indexOf("\n") + 1).split(",\r\n");
+                const csvRows = string.slice(string.indexOf("\n") + 1).split("\r\n");
                 const savedCards = {};
             
                 for (let i = 0; i < csvRows.length-1; i++) {
