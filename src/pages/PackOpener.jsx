@@ -90,7 +90,11 @@ const PackOpener = () => {
 
     return (
         <div className='pack-opener-content'>
-            <h2>Pack Opener</h2>
+            {packs.length > 0 ? (
+                <h2>Pack Opener</h2>
+            ) : (
+                <h2>Card List</h2>
+            )}
             <Container fluid>
                 <Row>
                     <Col xs={2} className='text-center'>

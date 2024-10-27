@@ -5,10 +5,6 @@ const ListStockComponent = (props) => {
   const [rowToHover, setRowToHover] = useState([]);
 
   let formattedCards = {};
-  const formattedCardsTest = {"Cactuar": [[3, 4], [2, 1]],
-                          "Golden Dodger (Midfielder)": [[6], [1]],
-                          "Tiefling (Purple)": [[10], [1]],
-                          "Warrior": [[1], [1]]};
 
   const formatCardsStock = () => {
     formattedCards = {};
@@ -26,11 +22,11 @@ const ListStockComponent = (props) => {
           formattedCards[pair[0]] = [[parseInt(pair[1])], [value]];
         }
     });
-    setCardList(formattedCards);
+
+    setCardList(Object.fromEntries(Object.entries(formattedCards).sort((a, b) => a[0].localeCompare(b[0]))));
   }
 
   useEffect(() => {
-    console.log(cardList);
     formatCardsStock();
   }, [props.cardsStock]);
 
@@ -39,9 +35,9 @@ const ListStockComponent = (props) => {
       <table className="top-table" cellPadding={0}>
         <thead>
           <tr>
-            <th>Card Name</th>
-            <th>Power</th>
-            <th>Number Owned</th>
+            <th width="60%">Card Name</th>
+            <th width="20%">Power</th>
+            <th width="20%">Number Owned</th>
           </tr>
         </thead>
         <tbody>
