@@ -3,8 +3,9 @@
     text-align: center;
 }
 
-table {
+.top-table {
     margin-bottom: 10vh;
+    width: 100%;
 }
 
 tr, th, td {
@@ -31,11 +32,27 @@ tr:last-child {
     border-bottom: 3px solid;
 }
 
-tr:hover:not(:first-child) {
+tbody > tr:hover {
     background-color: rgb(172, 170, 170);
-    td:not(:first-child) {
-        background-color: yellow;
-    }
+}
+
+.hover-class {
+    background-color: yellow;
+}
+
+.nested-data {
+    width: 100%;
+}
+
+.nested-data > tr {
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: 1px solid;
+}
+
+.nested-data > tr:last-child {
+    border-bottom: none;
 }
 
 .cards {
