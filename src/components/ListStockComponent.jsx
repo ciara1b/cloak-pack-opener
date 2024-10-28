@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
+import FiltersComponent from "./FiltersComponent";
 
 const ListStockComponent = (props) => {
   const [cardList, setCardList] = useState({});
+  const [filteredCardList, setFilteredCardList] = useState({});
   const [rowToHover, setRowToHover] = useState([]);
 
-  let formattedCards = {};
-
   const formatCardsStock = () => {
-    formattedCards = {};
+    let formattedCards = {};
     Object.entries(props.cardsStock).map(([key, value]) => {
         let pair = key.split(",");
         if (pair[0] in formattedCards) {
@@ -23,7 +23,9 @@ const ListStockComponent = (props) => {
         }
     });
 
-    setCardList(Object.fromEntries(Object.entries(formattedCards).sort((a, b) => a[0].localeCompare(b[0]))));
+    let sortedCards = Object.fromEntries(Object.entries(formattedCards).sort((a, b) => a[0].localeCompare(b[0])));
+    setCardList(sortedCards);
+    setFilteredCardList(sortedCards);
   }
 
   useEffect(() => {
@@ -32,6 +34,7 @@ const ListStockComponent = (props) => {
 
   return (
     <div>
+      <FiltersComponent cardList={cardList} setFilteredList={setFilteredCardList} />
       <table className="top-table" cellPadding={0}>
         <thead>
           <tr>
@@ -41,7 +44,7 @@ const ListStockComponent = (props) => {
           </tr>
         </thead>
         <tbody>
-          {Object.entries(cardList).map(([card, [powers, numOwneds]], i) => (
+          {Object.entries(filteredCardList).map(([card, [powers, numOwneds]], i) => (
             <tr key={i} eventKey={i}>
               <td>{card}</td>
               <td>
