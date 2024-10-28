@@ -23,18 +23,22 @@ const FileReaderComponent = (props) => {
 
     const importFromCsv = (e) => {
         if (e.target.files[0]) {
-            fr.onload = function (event) {
-                const string = event.target.result;
-                const csvRows = string.slice(string.indexOf("\n") + 1).split("\r\n");
-                const savedCards = {};
-            
-                for (let i = 0; i < csvRows.length-1; i++) {
-                    let values = csvRows[i].split(",");
-                    savedCards[[values[0], values[1]]] = parseInt(values[2]);
+            if (e.target.files[0].name.endsWith(".csv")) {
+                fr.onload = function (event) {
+                    const string = event.target.result;
+                    const csvRows = string.slice(string.indexOf("\n") + 1).split("\r\n");
+                    const savedCards = {};
+                
+                    for (let i = 0; i < csvRows.length-1; i++) {
+                        let values = csvRows[i].split(",");
+                        savedCards[[values[0], values[1]]] = parseInt(values[2]);
+                    }
+                    props.setSaved(savedCards);
                 }
-                props.setSaved(savedCards);
+                setImportMsg("File imported!");
+            } else {
+                setImportMsg("Wrong filetype!");
             }
-            setImportMsg("File imported!");
         }
 
         fr.readAsText(e.target.files[0]);
@@ -43,10 +47,10 @@ const FileReaderComponent = (props) => {
     return (
         <div className="files">
             <br />
-            {importMsg}
+            {importMsg === "Wrong filetype!" ? <div style={{color: "red", height: "0"}}>{importMsg}</div> : importMsg}
             <br />
             <Button variant="warning" onClick={()=>fileInputRef.current.click()}>Import Cards</Button>{' '}
-            <input onChange={importFromCsv} multiple={false} ref={fileInputRef} type='file'hidden/>
+            <input onChange={importFromCsv} multiple={false} ref={fileInputRef} type='file' hidden/>
             <br />
             <Button variant="warning" onClick={exportToCsv}>Export Cards</Button>{' '}
         </div>

@@ -99,8 +99,8 @@ const PackOpener = () => {
                 <Row>
                     <Col xs={2} className='text-center'>
                         <form>
-                            <input type="number" value={num} onChange={(e) => setNum(e.target.value)} placeholder="Number of packs..." />
-                            <input type="number" value={totalSP} onChange={(e) => setTotalSP(e.target.value)} placeholder="Total sp..." />
+                            <input type="number" value={num} onChange={(e) => setNum(((e.target.value >= 0) && (e.target.value <= 100)) ? e.target.value : 0)} placeholder="Number of packs..." />
+                            <input type="number" value={totalSP} onChange={(e) => setTotalSP(e.target.value >= 0 ? e.target.value : 0)} placeholder="Total sp..." />
                             <input type="text" value={charName} onChange={(e) => setCharName(e.target.value)} placeholder="Character name..." />
                         </form>
                         <br />
