@@ -34,7 +34,7 @@ const ListStockComponent = (props) => {
 
   return (
     <div>
-      <FiltersComponent cardList={cardList} setFilteredList={setFilteredCardList} />
+      <FiltersComponent cardList={cardList} filteredList={filteredCardList} setFilteredList={setFilteredCardList} />
       <table className="top-table" cellPadding={0}>
         <thead>
           <tr>
