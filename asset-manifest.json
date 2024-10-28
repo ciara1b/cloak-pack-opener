@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/cloak-pack-opener/static/css/main.1245fd78.css",
-    "main.js": "/cloak-pack-opener/static/js/main.af812f8b.js",
+    "main.css": "/cloak-pack-opener/static/css/main.daeee188.css",
+    "main.js": "/cloak-pack-opener/static/js/main.fd5458ba.js",
     "static/js/453.f7e128ae.chunk.js": "/cloak-pack-opener/static/js/453.f7e128ae.chunk.js",
     "static/media/pack-bg.png": "/cloak-pack-opener/static/media/pack-bg.e37ea44a829a2dc46026.png",
     "static/media/normal.txt": "/cloak-pack-opener/static/media/normal.741687f2b76419b7d605.txt",
     "index.html": "/cloak-pack-opener/index.html",
     "static/media/premium.txt": "/cloak-pack-opener/static/media/premium.d7738180eee960b93d27.txt",
-    "main.1245fd78.css.map": "/cloak-pack-opener/static/css/main.1245fd78.css.map",
-    "main.af812f8b.js.map": "/cloak-pack-opener/static/js/main.af812f8b.js.map",
+    "main.daeee188.css.map": "/cloak-pack-opener/static/css/main.daeee188.css.map",
+    "main.fd5458ba.js.map": "/cloak-pack-opener/static/js/main.fd5458ba.js.map",
     "453.f7e128ae.chunk.js.map": "/cloak-pack-opener/static/js/453.f7e128ae.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1245fd78.css",
-    "static/js/main.af812f8b.js"
+    "static/css/main.daeee188.css",
+    "static/js/main.fd5458ba.js"
   ]
 }
