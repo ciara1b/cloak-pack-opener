@@ -5,6 +5,7 @@ const ListStockComponent = (props) => {
   const [cardList, setCardList] = useState({});
   const [filteredCardList, setFilteredCardList] = useState({});
   const [rowToHover, setRowToHover] = useState([]);
+  const [reversed, setReversed] = useState(false);
 
   const formatCardsStock = () => {
     let formattedCards = {};
@@ -28,6 +29,20 @@ const ListStockComponent = (props) => {
     setFilteredCardList(sortedCards);
   }
 
+  const reverseSort = () => {
+    let sortedCards = {};
+
+    if (reversed) {
+      sortedCards = Object.fromEntries(Object.entries(filteredCardList).sort((a, b) => a[0].localeCompare(b[0])));
+      setReversed(false);
+    } else {
+      sortedCards = Object.fromEntries(Object.entries(filteredCardList).sort((a, b) => b[0].localeCompare(a[0])));
+      setReversed(true);
+    }  
+    setFilteredCardList(sortedCards);
+    setCardList(sortedCards);
+  }
+
   useEffect(() => {
     formatCardsStock();
   }, [props.cardsStock]);
@@ -38,7 +53,7 @@ const ListStockComponent = (props) => {
       <table className="top-table" cellPadding={0}>
         <thead>
           <tr>
-            <th width="60%">Card Name</th>
+            <th width="60%" onClick={reverseSort}>Card Name</th>
             <th width="20%">Power</th>
             <th width="20%">Number Owned</th>
           </tr>

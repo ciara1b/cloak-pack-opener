@@ -20,6 +20,10 @@ th {
     border: 3px solid;
 }
 
+th:first-child:hover {
+    cursor: pointer;
+}
+
 td {
     font-weight: 600;
 }
