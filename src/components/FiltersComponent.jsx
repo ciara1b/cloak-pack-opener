@@ -23,7 +23,7 @@ const FiltersComponent = (props) => {
     }
 
     const searchName = () => {
-        let searched = props.cardList;
+        let searched = props.filteredList;
         if (Object.keys(localFilteredList).length === 0 && allState) {
             setLocalFilteredList(props.cardList);
             searched = Object.fromEntries(Object.entries(props.cardList).filter(([k, v]) => k.toLocaleLowerCase().includes(searchTarget)));

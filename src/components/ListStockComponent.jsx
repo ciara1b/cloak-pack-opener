@@ -39,8 +39,8 @@ const ListStockComponent = (props) => {
       sortedCards = Object.fromEntries(Object.entries(filteredCardList).sort((a, b) => b[0].localeCompare(a[0])));
       setReversed(true);
     }  
+
     setFilteredCardList(sortedCards);
-    setCardList(sortedCards);
   }
 
   useEffect(() => {
