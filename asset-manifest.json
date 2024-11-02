@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/cloak-pack-opener/static/css/main.caeb6fba.css",
-    "main.js": "/cloak-pack-opener/static/js/main.b2abcf48.js",
+    "main.js": "/cloak-pack-opener/static/js/main.3713481f.js",
     "static/js/453.f7e128ae.chunk.js": "/cloak-pack-opener/static/js/453.f7e128ae.chunk.js",
     "static/media/pack-bg.png": "/cloak-pack-opener/static/media/pack-bg.e37ea44a829a2dc46026.png",
     "static/media/normal.txt": "/cloak-pack-opener/static/media/normal.741687f2b76419b7d605.txt",
     "index.html": "/cloak-pack-opener/index.html",
     "static/media/premium.txt": "/cloak-pack-opener/static/media/premium.d7738180eee960b93d27.txt",
     "main.caeb6fba.css.map": "/cloak-pack-opener/static/css/main.caeb6fba.css.map",
-    "main.b2abcf48.js.map": "/cloak-pack-opener/static/js/main.b2abcf48.js.map",
+    "main.3713481f.js.map": "/cloak-pack-opener/static/js/main.3713481f.js.map",
     "453.f7e128ae.chunk.js.map": "/cloak-pack-opener/static/js/453.f7e128ae.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.caeb6fba.css",
-    "static/js/main.b2abcf48.js"
+    "static/js/main.3713481f.js"
   ]
 }
